@@ -1,13 +1,15 @@
 header{
     max-width: 100%;
     background-color: #0064EB;
-
+    
 }
 form {
     position: relative;
     max-width: 1366px;
     margin: 0 auto;
     padding: 16px 0px;
+    display: grid;
+    grid-template-columns: 40px 1fr;
   }
   input, button {
     border: none;
@@ -18,5 +20,16 @@ form {
     width: 500px;
     height: 40px;
     padding-left: 15px;
+    margin-left: 22px;
   }
-  
+
+.icon {
+  width: 40px;
+  height: 40px;
+  color:  white;
+}
+
+.content{
+  display: grid;
+  grid-template-columns: 295px 1fr;
+}
