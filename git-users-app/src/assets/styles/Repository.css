@@ -1,0 +1,19 @@
+.repoCard{
+    margin-bottom: 24px;
+    background-color: #FFFFFF;
+    padding: 24px 32px;
+}
+
+.cardTitle{
+    color: #0064EB;
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+
+.cardTitle a{
+    text-decoration: none;
+}
+
+.description{
+    font-size: 16px;
+}

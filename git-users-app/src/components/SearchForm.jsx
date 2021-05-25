@@ -18,7 +18,7 @@ function SearchForm() {
             console.log(resp);
             setUser(resp)
         });
-        fetch(`https://api.github.com/users/${inputValue}/repos`).then(resp => resp.json()).then(resp => {
+        fetch(`https://api.github.com/users/${inputValue}/repos?per_page=100`).then(resp => resp.json()).then(resp => {
             console.log(resp);
             setRepos(resp)
         })

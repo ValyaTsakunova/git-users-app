@@ -7,7 +7,7 @@ form {
     position: relative;
     max-width: 1366px;
     margin: 0 auto;
-    padding: 16px 0px;
+    padding: 16px 41px;
     display: grid;
     grid-template-columns: 40px 1fr;
   }
@@ -30,6 +30,6 @@ form {
 }
 
 .content{
-  display: grid;
-  grid-template-columns: 295px 1fr;
+  display: flex;
+  padding-right: 56px;
 }

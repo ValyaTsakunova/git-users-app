@@ -3,12 +3,9 @@ import '../assets/styles/UserProfile.css';
 
 
 function UserProfile({user}){
-
-    
     return(
-        <div>
             <div className="userCard">
-                <img src={user.avatar_url} alt=" " />
+                <div className="avatar"><img src={user.avatar_url} alt=" " /></div>
                 <div>{user.name}</div>
                 <div>{user.login}</div>
                 <div>
@@ -16,7 +13,6 @@ function UserProfile({user}){
                 <div>{user.following}</div>
                 </div>
             </div>
-        </div>
     )
 }
 

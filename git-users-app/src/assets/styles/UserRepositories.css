@@ -1,0 +1,22 @@
+.repoContainer{
+    width: 100%;
+}
+.title{
+    font-size: 32px;
+    font-weight: 600;
+    margin: 28px auto 29px auto;
+}
+
+.pageNumbers{
+    list-style: none;
+    display: flex;
+}
+
+.pageNumbers li{
+    padding: 10px;
+}
+
+.active{
+    background-color: black;
+    color: white;
+}
