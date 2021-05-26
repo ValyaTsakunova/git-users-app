@@ -7,12 +7,10 @@ const searchIcon = <FontAwesomeIcon icon={faSearch} size="3x"/>;
 
 function InitialState(){
     return(
-        <div className="initialContent">
             <div className="initialState">
                 {searchIcon}
                 <p>Start with searching <br /> a GitHub user</p>
             </div>
-        </div>
     )
 }
 

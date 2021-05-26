@@ -1,4 +1,4 @@
-.initialState{
+.emptyContent{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -6,5 +6,5 @@
     color: #808080;
     font-size: 22px;
     margin-top: -50px;
-    margin-left: -70px;
+    margin-left: -40px;
 }

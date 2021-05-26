@@ -6,6 +6,7 @@ import UserProfile from './UserProfile';
 import UserRepositories from './UserRepositories';
 import InitialState from './InitialState';
 import '../assets/styles/SearchForm.css';
+import EmptyRepoList from './EmptyRepoList';
 
 const githubIcon = <FontAwesomeIcon icon={faGithub} size="3x" />;
 const searchIcon = <FontAwesomeIcon icon={faSearch}  />
@@ -39,12 +40,13 @@ function SearchForm() {
             <div className="searchIcon">{searchIcon}</div>
         </form>
         </header>
-        {!user.length && !repos.length ? 
+        {user.length == 0 ? 
             <InitialState /> :
             <div className="content">
-            {user ? <UserProfile user={user} repos={repos} /> : null}
-            {repos ? <UserRepositories user={user} repos={repos} /> : null}
-        </div>
+                <UserProfile user={user} repos={repos} /> 
+                {repos.length == 0 ? <EmptyRepoList /> :
+                <UserRepositories user={user} repos={repos} /> }
+            </div>
         }
         
         
