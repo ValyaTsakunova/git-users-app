@@ -1,8 +1,18 @@
 import React, { useState } from 'react';
 import Repository from './Repository';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
+
+
 import '../assets/styles/UserRepositories.css';
 
-function UserRepositories({repos}){
+const prevArrow = <FontAwesomeIcon icon={faChevronLeft} />;
+const nextArrow = <FontAwesomeIcon icon={faChevronRight} />
+
+
+
+function UserRepositories({repos, user}){
     const [currentPage, setCurrentPage] = useState(1);
     const [itemsPerPage, setItemsPerPage] = useState(4);
 
@@ -27,7 +37,7 @@ function UserRepositories({repos}){
     const renderPageNumbers = pages.map(number => {
         if(number < maxPageNumberLimit + 1 && number > minPageNumberLimit){
            return(
-            <li key={number} id={number} onClick={handleClick} className={currentPage == number ? "active" : null }>
+            <li key={number} id={number} onClick={handleClick} className={currentPage === number ? "active" : null }>
                 {number}
             </li>
         ) 
@@ -49,7 +59,7 @@ function UserRepositories({repos}){
     const clickPrevButton = () => {
         setCurrentPage(currentPage - 1);
 
-        if((currentPage -1) % pageNumberLimit == 0){
+        if((currentPage -1) % pageNumberLimit === 0){
             setMaxPageNumberLimit(maxPageNumberLimit - pageNumberLimit);
             setMinPageNumberLimit(minPageNumberLimit - pageNumberLimit);
         }
@@ -67,19 +77,19 @@ function UserRepositories({repos}){
 
     return(
         <div className="repoContainer">
-        <div className="title">Repositories ({repos.length})</div>
+        <div className="title">Repositories ({user.public_repos})</div>
         {currentItems.map((repository) => {
             return <Repository key={repository.id} repository={repository}/>
         })}
         <ul className="pageNumbers">
             <li>
-                <button onClick={clickPrevButton}>Prev</button>
+                <button onClick={clickPrevButton}>{prevArrow}</button>
             </li>
                 {pageIncrButton}
                 {renderPageNumbers}
                 {pageDecrButton}
             <li>
-                <button onClick={clickNextButton}>Next</button>
+                <button onClick={clickNextButton}>{nextArrow}</button>
             </li>
         </ul>
         

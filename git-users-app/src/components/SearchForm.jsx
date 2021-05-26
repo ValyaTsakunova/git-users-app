@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import UserProfile from './UserProfile';
 import UserRepositories from './UserRepositories';
+import InitialState from './InitialState';
 import '../assets/styles/SearchForm.css';
 
-const githubIcon = <FontAwesomeIcon icon={faGithub} size="3x" />
+const githubIcon = <FontAwesomeIcon icon={faGithub} size="3x" />;
+const searchIcon = <FontAwesomeIcon icon={faSearch}  />
 
 function SearchForm() {
     const [inputValue, setInputValue] = useState('');
@@ -32,13 +35,18 @@ function SearchForm() {
         <header>
         <form onSubmit={onSubmit}>
             <div className="icon">{githubIcon}</div>
-            <input type="text" placeholder="type here..." value={inputValue} onChange={onInputChange}></input>
+            <input type="text" placeholder="Enter GitHub username" value={inputValue} onChange={onInputChange}></input>
+            <div className="searchIcon">{searchIcon}</div>
         </form>
         </header>
-        <div className="content">
+        {!user.length && !repos.length ? 
+            <InitialState /> :
+            <div className="content">
             {user ? <UserProfile user={user} repos={repos} /> : null}
-            {repos ? <UserRepositories repos={repos} /> : null}
+            {repos ? <UserRepositories user={user} repos={repos} /> : null}
         </div>
+        }
+        
         
         </>
     )

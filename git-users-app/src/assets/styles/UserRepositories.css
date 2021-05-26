@@ -10,13 +10,18 @@
 .pageNumbers{
     list-style: none;
     display: flex;
+    justify-content: flex-end;
 }
 
 .pageNumbers li{
     padding: 10px;
 }
 
+.pageNumbers button{
+    background-color: transparent;
+}
+
 .active{
-    background-color: black;
+    background-color: #0064EB;
     color: white;
 }
