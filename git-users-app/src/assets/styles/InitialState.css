@@ -1,10 +1,23 @@
+.initialContent{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
 .initialState{
     position: absolute;
-    top: 50%;
+    top: 200px;
     left: 50%;
     text-align: center;
     color: #808080;
     font-size: 22px;
-    margin-top: -50px;
     margin-left: -70px;
 }
+
+@media screen and (max-width: 780px){
+    .initialState{
+        top: 100px;
+        left: 50%;
+        margin-left: -80px;
+    }
+  }

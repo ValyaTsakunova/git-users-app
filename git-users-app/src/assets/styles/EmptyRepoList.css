@@ -1,10 +1,14 @@
 .emptyContent{
-    position: absolute;
-    top: 50%;
-    left: 50%;
     text-align: center;
     color: #808080;
     font-size: 22px;
-    margin-top: -50px;
-    margin-left: -40px;
+    margin: 200px auto;
 }
+
+@media screen and (max-width: 640px){
+    .emptyContent{
+        /* margin-left: 80px; */
+        margin: 80px auto; 
+        /* padding-left: 0px;  */
+    }
+  }

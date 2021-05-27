@@ -27,3 +27,33 @@ img{
 .followers{
     display: flex;
 }
+
+.usersIcon{
+    margin-right: 6px;
+}
+
+.userIcon{
+    margin-right: 4px;
+    margin-left: 15px;
+}
+
+@media screen and (max-width: 780px){
+    .userCard{
+        margin: 20px auto;
+    }
+  }
+
+  @media screen and (max-width: 580px){
+    .userCard{
+        max-width: 200px;
+    }
+    .followers{
+        display: block;
+    }
+    .followers div{
+        margin-bottom: 20px;
+    }
+    .userIcon{
+        margin-left: 5px;
+    }
+  }

@@ -10,7 +10,6 @@
 .pageNumbers{
     list-style: none;
     display: flex;
-    justify-content: flex-end;
 }
 
 .pageNumbers li{
@@ -24,4 +23,24 @@
 .active{
     background-color: #0064EB;
     color: white;
+}
+
+.pagination{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+@media screen and (max-width: 960px){
+    .pagination{
+        display: block;
+        text-align: center;
+    }
+    .showItems{
+        text-align: left;
+        margin-left: 25px;
+    }
+    .pageNumbers{
+        padding-inline-start: 0px;
+    }
 }
