@@ -7,8 +7,6 @@
 
 @media screen and (max-width: 640px){
     .emptyContent{
-        /* margin-left: 80px; */
         margin: 80px auto; 
-        /* padding-left: 0px;  */
     }
   }

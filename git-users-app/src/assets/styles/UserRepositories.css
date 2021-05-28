@@ -1,6 +1,7 @@
 .repoContainer{
     width: 100%;
 }
+
 .title{
     font-size: 32px;
     font-weight: 600;
@@ -18,11 +19,16 @@
 
 .pageNumbers button{
     background-color: transparent;
+    font-size: 20px;
+}
+
+.pageNumbers button:hover{
+    background-color: blue;
+    color: white;
 }
 
 .active{
-    background-color: #0064EB;
-    color: white;
+    color: #0064EB;
 }
 
 .pagination{

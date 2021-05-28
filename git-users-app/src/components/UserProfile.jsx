@@ -5,13 +5,12 @@ import { faUserFriends } from '@fortawesome/free-solid-svg-icons';
 
 import '../assets/styles/UserProfile.css';
 
-const userIcon = <FontAwesomeIcon icon={faUser} />
-const usersIcon = <FontAwesomeIcon icon={faUserFriends} />
+const userIcon = <FontAwesomeIcon icon={faUser} />;
+const usersIcon = <FontAwesomeIcon icon={faUserFriends} />;
 
-
-
-function UserProfile({user}){
-    return(
+function UserProfile({ user }) {
+    return (
+        <>
             <div className="userCard">
                 <div className="avatar"><img src={user.avatar_url} alt=" " /></div>
                 <div className="userName">{user.name}</div>
@@ -21,6 +20,8 @@ function UserProfile({user}){
                     <div><span className="userIcon">{userIcon}</span>{user.following} following</div>
                 </div>
             </div>
+
+        </>
     )
 }
 

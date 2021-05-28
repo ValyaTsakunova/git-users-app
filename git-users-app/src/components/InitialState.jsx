@@ -3,10 +3,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import '../assets/styles/InitialState.css';
 
-const searchIcon = <FontAwesomeIcon icon={faSearch} size="3x"/>;
+const searchIcon = <FontAwesomeIcon icon={faSearch} size="3x" />;
 
-function InitialState(){
-    return(
+function InitialState() {
+    return (
         <div className="initialContent">
             <div className="initialState">
                 {searchIcon}

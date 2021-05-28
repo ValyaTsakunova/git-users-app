@@ -5,8 +5,8 @@ import '../assets/styles/EmptyRepoList.css';
 
 const crossIcon = <FontAwesomeIcon icon={faTimesCircle} size="3x" />;
 
-function EmptyRepoList (){
-    return(
+function EmptyRepoList() {
+    return (
         <div className="emptyContent">
             {crossIcon}
             <p>Repository list is empty</p>
