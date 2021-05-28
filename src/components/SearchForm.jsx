@@ -28,13 +28,10 @@ function SearchForm() {
     const onSubmit = (event) => {
         event.preventDefault();
         fetch(`https://api.github.com/users/${inputValue}`).then(handleError).then(resp => resp.json()).then(resp => {
-            setUser(resp);
-            console.log(resp)
+            setUser(resp)
         }).catch(() => console.log('error'));
         fetch(`https://api.github.com/users/${inputValue}/repos?&per_page=100`).then(handleError).then(resp => resp.json()).then(resp => {
             setRepos(resp)
-            console.log(resp)
-
         }).catch(() => console.log('error'))
         setInputValue('');
         setInitState(false);
