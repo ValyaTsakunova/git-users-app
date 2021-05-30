@@ -4,7 +4,7 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 import UserProfile from './UserProfile';
-import UserRepositories from './UserRepositories';
+import Pagination from './Pagination';
 import InitialState from './InitialState';
 import EmptyRepoList from './EmptyRepoList';
 import UserNotFound from './UserNotFound';
@@ -28,13 +28,14 @@ function SearchForm() {
     const onSubmit = (event) => {
         event.preventDefault();
         fetch(`https://api.github.com/users/${inputValue}`).then(handleError).then(resp => resp.json()).then(resp => {
-            setUser(resp)
+            setUser(resp);
         }).catch(() => console.log('error'));
-        fetch(`https://api.github.com/users/${inputValue}/repos?&per_page=100`).then(handleError).then(resp => resp.json()).then(resp => {
+        fetch(`https://api.github.com/users/${inputValue}/repos?&page=1&per_page=4`).then(handleError).then(resp => resp.json()).then(resp => {
             setRepos(resp)
         }).catch(() => console.log('error'))
         setInputValue('');
         setInitState(false);
+        
     }
     const onInputChange = (event) => {
         setInputValue(event.target.value)
@@ -52,10 +53,10 @@ function SearchForm() {
             {initState === true ?
                 <InitialState /> :
                 <div className="content">
-                    {Object.keys(user).length === 0 ? <UserNotFound /> : <UserProfile user={user} repos={repos} />}
+                    {Object.keys(user).length === 0 ? <UserNotFound /> : <UserProfile user={user} />}
                     {user.public_repos === 0 ? <EmptyRepoList /> : null}
                     {!repos.length && user.public_repos > 0 ? <div className="loader"></div> : null}
-                    {repos.length ? <UserRepositories user={user} repos={repos} /> : null}
+                    {repos.length > 0 ? <Pagination user={user} repos={repos} /> : null}
                 </div>
             }
         </>

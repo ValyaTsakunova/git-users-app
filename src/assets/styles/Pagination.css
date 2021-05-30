@@ -22,11 +22,6 @@
     font-size: 20px;
 }
 
-.pageNumbers button:hover{
-    background-color: blue;
-    color: white;
-}
-
 .active{
     color: #0064EB;
 }
